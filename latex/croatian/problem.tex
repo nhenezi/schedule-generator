@@ -1,29 +1,53 @@
 \section{Ulazni podaci}
   \subsection{Predavaonice}
+  Predavaonica je mjesto gdje se drzi predavanje.
     \begin{itemize}
-      \item ID
       \item Broj učione
       \item Broj mjesta
       \item Vrijeme (zauzeta/slobodna)
     \end{itemize}
   \subsection{Predmeti}
     \begin{itemize}
-      \item ID
       \item Ime
       \item Tjedni broj sati
     \end{itemize}
   \subsection{Grupe}
     \begin{itemize}
-      \item ID
       \item Broj članova
       \item Predmeti
     \end{itemize}
   \subsection{Profesori}
     \begin{itemize}
-      \item ID
       \item Ime
       \item Prezime
       \item Grupe
       \item Vrijeme
       \item prioritet
     \end{itemize}
+
+\section{Pristupi problemu}
+    Trenutno imamo dva pristupa problemu.
+    \subsection{Prioritet imaju grupe i profesori}
+    Svakome profesoru je dodjeljen skup predmeta koji on drzi i neki skup slobodnih vremena. Dok se svi preedmeti ne popune stavljaju se u prazna mjesta.
+    \section{Prioritet imaju grupe i ucione}
+    Svakoj ucioni je dodjeljena grupa, tj. skup grupa koja one moze primit, tj. kapacitet ucione je veci ili jedna broju elemenata grupe.
+
+
+Odlucilo se za genetski algoritam, tzv otocki genetski algoritam. Da bi mogli zapoceti algoritam uz ulazne podatke potrebni su nam nacin kodiranja rjesenja, funkcija dobrote, i model za selekciju najboljih jedinki. Trenutno predlozeni model je slijedeci:
+
+Neka je n broj raspolozivih racunala. Na pocetku imam n otoka, svaki otok izvrsava jednu generaciju genetskog algoritma nakon cega vrsi selekciju najboljih (prema funckiji dobrote). Naj-otok, tj. otok sa najboljim rjesenjam, tj. pobjedcniki otok dobiva najbolja rijesenja sa ostalih otoka te se postupak ponavlja. Otok koji ucestalno odredjeni zaredom k puta gubi biva izbacivan sa turnira i broj otok se smanjuje za jedan.
+
+dvije moguce varijante:
+* brisemo jedan otok
+* slucajno se generira jedan otok od te generacije
+
+Uvjet zaustavljana:
+* kad on misli da je dovoljno dobar, tj. kada neki otok pobjedi l (l prirodan broj).
+* Vrijeme (tj. kad nam treba raspored)
+
+Aplikacija se ce vrtjeti m ciklusa, gdje je m eksperimentalno odredjeni prirodni broji koji odgovara izvrsavanju vremena a min. Svakih a min bi se zapisivalo u bazu.
+
+
+
+Funkcija dobrote:
+Generiramo rasporeda koliko imamo grupa u obliku matrice. Iz skupa profesora i skupa predmeta za tu grupu dodjelimo u matricu, tj. na slucajan nacin rasporedimo profesora s predmetima. To napravimo za sve rasporede. Funckiju dobrote odredujemo tako da preklopimo sve rasporede.
