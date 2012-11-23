@@ -22,7 +22,7 @@
       \item Prezime
       \item Grupe
       \item Vrijeme
-      \item prioritet
+      \item prioritet (izracuna se preko vremena)
     \end{itemize}
 
 \section{Pristupi problemu}
@@ -35,9 +35,8 @@
 
 Odlucilo se za genetski algoritam, tzv otocki genetski algoritam. Da bi mogli zapoceti algoritam uz ulazne podatke potrebni su nam nacin kodiranja rjesenja, funkcija dobrote, i model za selekciju najboljih jedinki. Trenutno predlozeni model je slijedeci:
 
-Neka je n broj raspolozivih racunala. Na pocetku imam n otoka, svaki otok izvrsava jednu generaciju genetskog algoritma nakon cega vrsi selekciju najboljih (prema funckiji dobrote). Naj-otok, tj. otok sa najboljim rjesenjam, tj. pobjedcniki otok dobiva najbolja rijesenja sa ostalih otoka te se postupak ponavlja. Otok koji ucestalno odredjeni zaredom k puta gubi biva izbacivan sa turnira i broj otok se smanjuje za jedan.
+Neka je n broj raspolozivih racunala. Na pocetku imam n otoka, svaki otok izvrsava jednu generaciju genetskog algoritma nakon cega vrsi selekciju najboljih (prema funckiji dobrote). Naj-otok, tj. otok sa najboljim rjesenjam, tj. pobjedcniki otok dobiva najbolja rjesenja sa ostalih otoka te se postupak ponavlja. Otok koji zaredom k puta gubi, biva izbacivan sa turnira i broj otok se smanjuje za jedan.
 
-dvije moguce varijante:
 * brisemo jedan otok
 * slucajno se generira jedan otok od te generacije
 
@@ -45,9 +44,9 @@ Uvjet zaustavljana:
 * kad on misli da je dovoljno dobar, tj. kada neki otok pobjedi l (l prirodan broj).
 * Vrijeme (tj. kad nam treba raspored)
 
-Aplikacija se ce vrtjeti m ciklusa, gdje je m eksperimentalno odredjeni prirodni broji koji odgovara izvrsavanju vremena a min. Svakih a min bi se zapisivalo u bazu.
+Aplikacija se ce vrtjeti m ciklusa, gdje je m eksperimentalno odredjeni prirodni broji koji odgovara izvrsavanju vremena a min. Svakih a min bi se zapisivalo u bazu (dobivamo na skaliranju, mozemo proizvoljno dodavati/micati racunala iz programa)
 
 
+Funkcija dobrote: Generiramo rasporeda koliko imamo grupa u obliku matrice. Iz skupa profesora i skupa predmeta za tu grupu dodjelimo u matricu, tj. na slucajan nacin rasporedimo profesora s predmetima. To napravimo za sve rasporede. Funckiju dobrote odredujemo tako da preklopimo sve rasporede.
 
-Funkcija dobrote:
-Generiramo rasporeda koliko imamo grupa u obliku matrice. Iz skupa profesora i skupa predmeta za tu grupu dodjelimo u matricu, tj. na slucajan nacin rasporedimo profesora s predmetima. To napravimo za sve rasporede. Funckiju dobrote odredujemo tako da preklopimo sve rasporede.
+Drugi tjedan reprezentacija rezultata, funkcija generiranja i cilja.
