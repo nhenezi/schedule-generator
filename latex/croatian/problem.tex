@@ -24,7 +24,6 @@
       \item Vrijeme
       \item prioritet (izracuna se preko vremena)
     \end{itemize}
-
 \section{Pristupi problemu}
     Trenutno imamo dva pristupa problemu.
     \subsection{Prioritet imaju grupe i profesori}
@@ -49,4 +48,8 @@ Aplikacija se ce vrtjeti m ciklusa, gdje je m eksperimentalno odredjeni prirodni
 
 Funkcija dobrote: Generiramo rasporeda koliko imamo grupa u obliku matrice. Iz skupa profesora i skupa predmeta za tu grupu dodjelimo u matricu, tj. na slucajan nacin rasporedimo profesora s predmetima. To napravimo za sve rasporede. Funckiju dobrote odredujemo tako da preklopimo sve rasporede.
 
-Drugi tjedan reprezentacija rezultata, funkcija generiranja i cilja.
+
+* Reprezentancija rezultata
+Svaka jedinka bi se sastojala od ``matrica'' profesora. Svaka jedinka bi sadrzaval 5 polja (numerirana od 0 do 4), a svako polje bi sadrzavalo uzlazno sortirana polja vremena u kojima su profesori slobodni. Svako takvo polje bi sadrzavalo uredjeni par (grupa, uciona). Svaka grupa sadrzi listu profesora sa vremenom u kojem imaju predavanje kod tog profesora (za krpanje rupa).
+
+Drugi tjedan reprezentacija rezultata, funkcija generiranja i cilja.p
